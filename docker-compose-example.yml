@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  vdirsyncer:
+    image: pschlieker/vdirsyncer-docker .
+    volumes:
+      - ./config:/config
+      - ./pre.sh:/pre.sh
+      - ./post.sh:/post.sh
+    environment:
+      - CRONTIMETABLE=*/15 * * * *
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
