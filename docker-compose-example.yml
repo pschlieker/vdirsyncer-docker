@@ -2,7 +2,7 @@ version: '3'
 services:
 
   vdirsyncer:
-    image: pschlieker/vdirsyncer-docker .
+    image: pschlieker/vdirsyncer-docker
     volumes:
       - ./config:/config
       - ./pre.sh:/pre.sh
