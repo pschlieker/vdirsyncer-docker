@@ -1,8 +1,9 @@
 # vdirsyncer-docker
-Docker container running a cronjob with vdirsyncer (https://vdirsyncer.pimutils.org)
+Docker container running a cronjob with vdirsyncer (https://vdirsyncer.pimutils.org) and merge_ics (https://github.com/pschlieker/merge_ics).
 ## Feautures
 - Flexible timing of cronjob
 - Script to be run before and after execution of vdirsyncer sync
+- Includes merge_ics which allows to merge multiple Calendars into one and can be called via the pre-script. The merged calendar can be then synced with vdirsyncer.
 
 ## Settings
 see `docker-compose-example.yml` for an example

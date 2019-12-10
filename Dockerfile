@@ -2,7 +2,10 @@ FROM python:3.7-alpine
 
 WORKDIR /
 
-RUN pip install vdirsyncer
+RUN apk --update add --no-cache git \
+	&& pip install vdirsyncer git+https://github.com/pschlieker/merge_ics \
+	&& apk del git \
+	&& rm -rf /var/cache/apk/*
 
 ENV VDIRSYNCER_CONFIG /config
 ENV CRONTIMETABLE */10 * * * *
