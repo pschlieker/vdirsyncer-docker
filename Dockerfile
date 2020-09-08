@@ -3,7 +3,7 @@ FROM python:3.7-alpine
 WORKDIR /
 
 RUN apk --update add --no-cache git \
-	&& pip install vdirsyncer git+https://github.com/pschlieker/merge_ics \
+	&& pip install vdirsyncer[google] git+https://github.com/pschlieker/merge_ics \
 	&& apk del git \
 	&& rm -rf /var/cache/apk/*
 
